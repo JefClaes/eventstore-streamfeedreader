@@ -15,7 +15,7 @@ module.exports = {
                 url : feedUri + streamName + '?embed=body'
             }).done(function (data) {                
                 var lastLinks = data.links.filter(function(link) { 
-                    return link.relation === "last"; 
+                    return link.relation === 'last'; 
                 });                       
 
                 if (lastLinks.length > 0) {               
@@ -41,7 +41,7 @@ module.exports = {
                 }            
 
                 var previousLinks = data.links.filter(function(link) { 
-                    return link.relation === "previous"; 
+                    return link.relation === 'previous'; 
                 });            
 
                 if (previousLinks.length === 1) {

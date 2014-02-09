@@ -16,8 +16,8 @@ module.exports = {
 					test.done();
 				})
 				.done(function(res) {
-					var streamContainsEvents = function() {
-						test.ok(res.length > 0, 'expected some events in the stream.');	
+					var streamContainsAllEvents = function() {
+						test.equal(651, res.length, 'expecting 651 events in stream.');
 					};
 					var eventsInStreamAreOrdered = function() {
 						var ordered = true;
@@ -29,7 +29,7 @@ module.exports = {
 						test.ok(ordered, 'event numbers out of order.');
 					};
 
-					streamContainsEvents();
+					streamContainsAllEvents();
 					eventsInStreamAreOrdered();								
 
 					test.done();
